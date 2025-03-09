@@ -1,9 +1,9 @@
 using System.Diagnostics;
 using Serilog;
-using QB_Customers_Lib;  // Changed from QB_Terms_Lib to QB_Customers_Lib.
+using QB_Customers_Lib;  
 using QBFC16Lib;         // For QuickBooks session and API interaction.
 using static QB_Customers_Test.CommonMethods;
-using QB_Terms_Test;
+using QB_Customers_Test;
 
 namespace QB_Customers_Test
 {

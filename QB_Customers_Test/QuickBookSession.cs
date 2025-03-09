@@ -1,6 +1,6 @@
 ﻿using QBFC16Lib;
 
-namespace QB_Terms_Test
+namespace QB_Customers_Test
 {
     public class QuickBooksSession : IDisposable
     {

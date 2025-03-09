@@ -1,6 +1,6 @@
 ﻿using Serilog;
 
-namespace QB_Terms_CLI
+namespace QB_Customers_CLI
 {
     public static class LoggerConfig
     {
