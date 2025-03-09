@@ -3,7 +3,7 @@ using Serilog;
 
 namespace QB_Customers_Lib
 {
-    public class TermsReader
+    public class Customer_Reader
     {
         public static List<Customer> QueryAllCustomers()
         {
