@@ -14,7 +14,7 @@ namespace QB_Customers_Test
         public static void DeleteOldLogFiles()
         {
             string logDirectory = "logs";
-            string logPattern = "qb_customers_lib*.log";
+            string logPattern = "qb_sync*.log";
 
             if (Directory.Exists(logDirectory))
             {
@@ -66,7 +66,7 @@ namespace QB_Customers_Test
         public static string GetLatestLogFile()
         {
             string logDirectory = "logs";
-            string logPattern = "qb_customers_lib*.log";
+            string logPattern = "qb_sync*.log";
 
             string[] logFiles = Directory.GetFiles(logDirectory, logPattern, SearchOption.TopDirectoryOnly);
             if (logFiles.Length == 0)
