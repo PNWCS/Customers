@@ -12,7 +12,7 @@ namespace QB_Customers_CLI
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .WriteTo.Console()
-                .WriteTo.File("logs/qb_customers_lib.log",
+                .WriteTo.File("logs/qb_sync.log",
                     rollingInterval: RollingInterval.Day,
                     retainedFileCountLimit: 7,
                     fileSizeLimitBytes: 5_000_000,
