@@ -12,7 +12,7 @@ namespace Customers
     {
         static void Main(string[] args)
         {
-            CustomerReader.QueryAllCustomers(); 
+            CustomerReader.QueryAllCustomers();
         }
     }
 }

@@ -18,7 +18,7 @@ namespace QB_Customers_Lib
         {
             Name = name;
             Fax = fax;
-            
+
         }
     }
 }

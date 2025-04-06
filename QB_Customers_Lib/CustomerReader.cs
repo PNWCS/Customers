@@ -206,8 +206,8 @@ namespace QB_Customers_Lib
                                         //Console.WriteLine($"Customer Name: {customer.Name}, Fax: {customer.Fax}");
                                         Log.Information("Successfully retrieved {Name} from QB", customer.Name, customer.Fax);
                                         Log.Information("Customer Name: {Name}, Fax: {Fax}", customer.Name, customer.Fax);
-                                        
-                                        
+
+
                                     }
                                 }
                             }
