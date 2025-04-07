@@ -1,2 +1,18 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+
+using System.Net.NetworkInformation;
+using QB_Customers_Lib;
+//using Customer_LIB;
+
+namespace Customers
+{
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            CustomerReader.QueryAllCustomers();
+        }
+    }
+}

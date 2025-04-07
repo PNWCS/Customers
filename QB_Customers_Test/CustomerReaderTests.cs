@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Serilog;
-using QB_Customers_Lib;  
+using QB_Customers_Lib;
 using QBFC16Lib;         // For QuickBooks session and API interaction.
 using static QB_Customers_Test.CommonMethods;
 using QB_Customers_Test;
@@ -87,7 +87,7 @@ namespace QB_Customers_Test
         private string AddCustomer(QuickBooksSession qbSession, string name, string fax)
         {
             IMsgSetRequest requestMsgSet = qbSession.CreateRequestSet();
-            ICustomerAddRq customerAddRq = requestMsgSet.AppendCustomerAddRq();
+            ICustomerAdd customerAddRq = requestMsgSet.AppendCustomerAddRq();
             customerAddRq.Name.SetValue(name);
             customerAddRq.Fax.SetValue(fax);
             // Additional customer fields can be set here as needed.
