@@ -12,7 +12,15 @@ namespace Customers
     {
         static void Main(string[] args)
         {
-            CustomerReader.QueryAllCustomers();
+            List<Customer> customersToAdd = new List<Customer>
+        {
+            new Customer("John Snow", "Amazon"),
+            new Customer("Emila Clarke", "Microsoft")
+        };
+
+            CustomerAdder.AddCustomers(customersToAdd);
+
+            //CustomerReader.QueryAllCustomers();
         }
     }
 }

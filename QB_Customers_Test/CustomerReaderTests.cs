@@ -36,7 +36,7 @@ namespace QB_Customers_Test
             {
                 foreach (var customer in customersToAdd)
                 {
-                    string qbID = AddCustomer(qbSession, customer.Name, customer.Fax);
+                    string qbID = AddCustomer(qbSession, customer.Name, customer.CompanyName);
                     customer.QB_ID = qbID; // Store the returned QB ListID.
                 }
             }
@@ -50,7 +50,7 @@ namespace QB_Customers_Test
                 var matchingCustomer = allQBCustomers.FirstOrDefault(c => c.QB_ID == customer.QB_ID);
                 Assert.NotNull(matchingCustomer);
                 Assert.Equal(customer.Name, matchingCustomer.Name);
-                Assert.Equal(customer.Fax, matchingCustomer.Fax);
+                Assert.Equal(customer.CompanyName, matchingCustomer.CompanyName);
             }
 
             // 6) Cleanup: Delete the added customers.
