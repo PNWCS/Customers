@@ -197,15 +197,15 @@ namespace QB_Customers_Lib
                                     if (CustomerRet != null)
                                     {
                                         var name = CustomerRet.Name != null ? CustomerRet.Name.GetValue() : string.Empty;
-                                        var fax = CustomerRet.Fax != null ? CustomerRet.Fax.GetValue() : string.Empty;
+                                        var companyName = CustomerRet.CompanyName != null ? CustomerRet.CompanyName.GetValue() : string.Empty;
                                         var id = CustomerRet.ListID != null ? CustomerRet.ListID.GetValue() : string.Empty;
-                                        var customer = new Customer(name, fax);
+                                        var customer = new Customer(name, companyName);
                                         customer.QB_ID = id;
                                         customers.Add(customer);
 
                                         //Console.WriteLine($"Customer Name: {customer.Name}, Fax: {customer.Fax}");
-                                        Log.Information("Successfully retrieved {Name} from QB", customer.Name, customer.Fax);
-                                        Log.Information("Customer Name: {Name}, Fax: {Fax}", customer.Name, customer.Fax);
+                                        Log.Information("Successfully retrieved {Name} from QB", customer.Name, customer.CompanyName);
+                                        Log.Information("Customer Name: {Name}, CompanyName: {companyName}", customer.Name, customer.CompanyName);
 
 
                                     }

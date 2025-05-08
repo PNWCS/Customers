@@ -10,14 +10,14 @@ namespace QB_Customers_Lib
     {
 
         public string Name { get; set; }
-        public string Fax { get; set; }
+        public string CompanyName { get; set; }
 
         public string QB_ID { get; set; }
 
-        public Customer(string name, string fax)
+        public Customer(string name, string companyName)
         {
             Name = name;
-            Fax = fax;
+            CompanyName = companyName;
 
         }
     }
