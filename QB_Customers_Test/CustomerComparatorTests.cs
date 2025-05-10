@@ -2,9 +2,10 @@
 using System.Diagnostics;
 using Serilog;
 using QB_Customers_Lib;
-using QB_Customers_Lib.Comparator;     // ← where your CustomersComparator lives
+using QB_Customers_Lib;     // ← where your CustomersComparator lives
 using QBFC16Lib;
 using static QB_Customers_Test.CommonMethods;
+using System.Xml.Linq;
 
 namespace QB_Customers_Test
 {
@@ -29,7 +30,8 @@ namespace QB_Customers_Test
                 initialCustomers.Add(new Customer(
                     $"TestCust_{suffix}",
                     $"TestCo_{suffix}",
-                    START_ID + i));
+                    $"{START_ID + i}"));
+                Debug.WriteLine($"Customer {i}: {initialCustomers[i].Name}");
             }
 
             List<Customer> firstCompareResult  = new();
@@ -39,6 +41,16 @@ namespace QB_Customers_Test
             {
                 // ── 2. first compare – expect every customer to be Added ─────
                 firstCompareResult = CustomersComparator.CompareCustomers(initialCustomers);
+                Debug.WriteLine("First compare result");
+                foreach (var customer in firstCompareResult)
+                {
+                    Debug.WriteLine(customer);
+                }
+                //Debug.WriteLine("Initial Customers ");
+                //for (int i = 0;i<initialCustomers.Count; i++)
+                //{
+                //    Debug.WriteLine(initialCustomers[i]);
+                //}
 
                 foreach (var c in firstCompareResult
                                  .Where(c => initialCustomers.Any(x => x.Company_ID == c.Company_ID)))
@@ -57,6 +69,13 @@ namespace QB_Customers_Test
 
                 // ── 4. second compare – expect Missing, Different, Unchanged ─
                 secondCompareResult = CustomersComparator.CompareCustomers(updated);
+
+                Debug.WriteLine("Second compare result");
+                foreach (var customer in secondCompareResult)
+                {
+                    Debug.WriteLine(customer);
+                }
+
                 var dict = secondCompareResult.ToDictionary(c => c.Company_ID);
 
                 Assert.Equal(CustomerStatus.Missing, dict[removed.Company_ID].Status);
