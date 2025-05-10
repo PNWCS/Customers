@@ -34,7 +34,7 @@ namespace QB_Customers_Test
                 Debug.WriteLine($"Customer {i}: {initialCustomers[i].Name}");
             }
 
-            List<Customer> firstCompareResult  = new();
+            List<Customer> firstCompareResult = new();
             List<Customer> secondCompareResult = new();
 
             try
@@ -95,7 +95,7 @@ namespace QB_Customers_Test
                             .Where(c => !string.IsNullOrEmpty(c.QB_ID))
                             .ToList();
 
-                if (added is { Count: >0 })
+                if (added is { Count: > 0 })
                 {
                     using var qb = new QuickBooksSession(AppConfig.QB_APP_NAME);
                     foreach (var c in added)
@@ -110,7 +110,7 @@ namespace QB_Customers_Test
             string logs = File.ReadAllText(logFile);
 
             Assert.Contains("CustomersComparator Initialized", logs);
-            Assert.Contains("CustomersComparator Completed",   logs);
+            Assert.Contains("CustomersComparator Completed", logs);
 
             void AssertLogged(IEnumerable<Customer> customers)
             {
